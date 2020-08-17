@@ -1,2 +1,2 @@
-# zeite-endless.git.io/github.html
+# zeite-endless.git.io
 Portifólio Otávio Barros
