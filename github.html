@@ -56,6 +56,7 @@
             background-color: rgb(150, 245, 245);
             margin-right: 0px;
             margin-left: 2px;
+            cursor: pointer;
         }
 
         table {
@@ -72,6 +73,11 @@
 
         tr {
             border-radius: 12px;
+        }
+
+        #mi{
+            width: 100px;
+            cursor: pointer;
         }
     </style>
 
@@ -105,7 +111,7 @@
                   "</tr><td><br>" + dadosJSONObj[i].language + "<img src='images/" + dadosJSONObj[i].language + ".png'></img>" +
                   "</td><br><td><button onclick=\"cloneurl('" + dadosJSONObj[i].clone_url + "')\">Link" +
                   "</button><td><button onclick=\"cloneclone('" + dadosJSONObj[i].html_url + "')\">Clone" +
-                  "</button></div></td><br><br>"
+                  "</button><td><button type=\"submit\" id=\"mi\" action=\"sobre.html\">Mais Informações" + "</button></td></div><br><br>"
                 }
             }
         }
@@ -134,4 +140,3 @@
 </body>
 
 </html>
-
