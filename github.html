@@ -14,8 +14,7 @@
         }
         
         main {
-            display: flex;
-            width: 99%;
+            display: inline-block;
         }
 
         header {
@@ -28,10 +27,10 @@
         }
 
         div {
-            width: 500px;
+            width: 124px;
             margin-right: 25px;
             border: 2px solid black;
-            height: 300px;
+            height: 230px;
             border-radius: 12px;
             background-color: rgb(167, 167, 230);
             justify-content: center;
@@ -52,7 +51,7 @@
 
         button {
             border-radius: 12px;
-            width: 50px;
+            width: 55px;
             background-color: rgb(150, 245, 245);
             margin-right: 0px;
             margin-left: 2px;
@@ -75,8 +74,8 @@
             border-radius: 12px;
         }
 
-        #mi{
-            width: 100px;
+        .mi{
+            width: 120px;
             cursor: pointer;
         }
     </style>
@@ -107,11 +106,11 @@
                 let dadosJSONObj = JSON.parse(dadosJSONText)
                 for (let i = 0; i < dadosJSONObj.length; i++) {
                     bloco.innerHTML +=
-                  "<div><tr>" + dadosJSONObj[i].name +
+                  "<main><div><tr>" + dadosJSONObj[i].name +
                   "</tr><td><br>" + dadosJSONObj[i].language + "<img src='images/" + dadosJSONObj[i].language + ".png'></img>" +
                   "</td><br><td><button onclick=\"cloneurl('" + dadosJSONObj[i].clone_url + "')\">Link" +
                   "</button><td><button onclick=\"cloneclone('" + dadosJSONObj[i].html_url + "')\">Clone" +
-                  "</button><td><button type=\"submit\" id=\"mi\" action=\"sobre.html\">Mais Informações" + "</button></td></div><br><br>"
+                  "</button><td><button class=\"mi\" id=\""+ dadosJSONObj[i].name +"\" onclick=\"abrirsobre(this)\" target=\"_blank\">Mais Informações" + "</button></td></div><br><br></main>"
                 }
             }
         }
@@ -130,7 +129,18 @@
             document.execCommand("copy");
             input.remove();
 
-        }        
+        }     
+
+        function abrirsobre(sobre){
+             let arr = []
+
+             arr.push({nome: sobre.id})
+             let arrJson = JSON.stringify(arr)
+
+             localStorage.repositorio = arrJson
+
+             window.location.href = "sobre.html"
+        }   
         
     </script>
 
